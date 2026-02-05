@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.nav {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  border: none;
+  width: 100vw;
+  height: 60px;
+  align-items: center;
+  padding: 0px 15px 0px 40px;
+  font-style: bold;
+  margin: 10px 0px 0px 25px;
+}
+.btn .active {
+  background-color: blue;
+  color: white;
+  height: 35px;
+  width: 100px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-style: bold;
+  margin: 0px 15px 0px 0px;
+  border: 2px solid blue;
+}
+
+.btn .inactive {
+  background-color: rgb(216, 204, 204);
+  color: rgb(252, 243, 243);
+  color: black;
+  height: 35px;
+  width: 110px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-style: bold;
+  margin: 0px 15px 0px 0px;
+  border: none;
+  font-style: bold;
+}
+.form {
+  height: 800px;
+  width: 800px;
+  /* background-color: blue; */
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.form .inputs1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
+  margin-left: 55px;
+  gap: 15px;
+}
+.form .inputs2 {
+  margin-top: 30px;
+  margin-left: 55px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input {
+  background-color: whitesmoke;
+  border: 2px solid wheat;
+  width: 750px;
+  height: 40px;
+  border-radius: 8px;
+}
+textarea {
+  background-color: whitesmoke;
+  border: 2px solid wheat;
+  width: 750px;
+  height: 180px;
+  border-radius: 8px;
+}
+.form button {
+  background-color: blue;
+  color: white;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-style: bold;
+  margin: 0px 15px 0px 0px;
+  border: 2px solid blue;
+  margin-left: 55px;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 300px;
+}
+
+.email-icon {
+  position: absolute;
+  top: 65%;
+  left: 240%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
