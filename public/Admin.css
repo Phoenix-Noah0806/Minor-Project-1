@@ -146,3 +146,52 @@ body{
     background-color: rgb(216, 204, 204);
     font-size: 18px;
 }
+
+.details{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: 93vw;
+    height: 20vh;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 25px;
+    padding-top: 25px;
+    gap: 10px;
+    font-family:  Helvetica;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    position: relative;
+}
+.top .image{
+    position: absolute;
+    right: 10px;
+}
+
+.top button{
+    height: 20px;
+    width: 70px;
+    background-color: #ffb47e;
+    border-radius: 6px;
+    border: 1px solid gray;
+    color: #856404;
+    font-size: 15px;
+    
+}
+.lower{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    font-size: 20px ;
+    color: rgb(73, 73, 73);
+    font-weight: lighter;
+}
+
+.lowermost{
+    font-size: 15px;
+    color: gray;
+}
