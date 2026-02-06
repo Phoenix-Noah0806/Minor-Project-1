@@ -36,8 +36,16 @@ body {
   font-style: bold;
   margin: 0px 15px 0px 0px;
   border: 2px solid blue;
+  text-decoration: none;
 }
-
+.btn .active a {
+  text-decoration: none;
+  color: white;
+}
+.btn .inactive a {
+  text-decoration: none;
+  color: black;
+}
 .btn .inactive {
   background-color: rgb(216, 204, 204);
   color: rgb(252, 243, 243);
@@ -111,4 +119,46 @@ textarea {
   left: 240%;
   transform: translateY(-50%);
   pointer-events: none;
+}
+.dash{
+  margin-top: 35px;
+  position: absolute;
+  top: 80px;
+  left: 45px;
+}
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.card{
+  height: 110px;
+  width: 350px;
+  
+  margin-top: 30px;
+  padding-left: 30px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 200;
+  color: rgb(134, 133, 133);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
+}
+
+#card1{
+  border-left: 6px solid rgb(8, 102, 139);
+}
+#card2{
+  border-left: 6px solid rgb(245, 245, 44);
+}
+#card3{
+  border-left: 6px solid green;
+}
+#card4{
+  border-left: 6px solid red;
 }
