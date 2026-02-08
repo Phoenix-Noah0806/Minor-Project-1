@@ -167,12 +167,15 @@ body{
     gap: 30px;
     position: relative;
 }
-.top .image{
+.top .image button{
     position: absolute;
     right: 10px;
+    background-color: transparent;
+    border: none;
+    
 }
 
-.top button{
+.top button.status{
     height: 20px;
     width: 70px;
     background-color: #ffb47e;

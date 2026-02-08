@@ -1,38 +1,15 @@
-let complaints = [
-  {
-    id: 1,
-    title: "Water Leakage",
-    description: "Water is leaking from the ceiling in room 203",
-    status: "open",
-  },
-  {
-    id: 2,
-    title: "Electricity Issue",
-    description: "No power supply in the computer lab",
-    status: "open",
-  },
-  {
-    id: 3,
-    title: "Broken Chair",
-    description: "Chair is broken in classroom B12",
-    status: "resolved",
-  },
-  {
-    id: 4,
-    title: "Internet Not Working",
-    description: "Wi-Fi is not working in the library",
-    status: "open",
-  },
-  {
-    id: 5,
-    title: "Air Conditioner Problem",
-    description: "AC is not cooling in seminar hall",
-    status: "resolved",
-  },
-];
+let complaints = [];
 
 export function getComplaints(req, res) {
   res.json(complaints);
+}
+export function getComplaintbyId(req,res){
+  const id=Number(req.params.id);
+  const complaint=complaints.find((i)=>i.id===id);
+  if(!complaint){
+    return res.status(404).send("Complaint not Found!!!!");
+  }
+  res.json(complaint)
 }
 
 export function newComplaints(req, res) {
