@@ -12,7 +12,7 @@
         <h2>Complaint/ Issue Tracker</h2>
       </div>
       <div class="btn">
-        <button class="active" >User Portal</button>
+        <button class="active">User Portal</button>
         <button class="inactive"><a href="Admin.html">Admin Panel</a></button>
       </div>
     </div>
@@ -26,10 +26,10 @@
       </div>
       <div class="inputs2">
         <h3>Full Name *</h3>
-        <input type="text" placeholder="Enter your full name" />
+        <input type="text" id="fullname" placeholder="Enter your full name" />
         <div class="input-wrapper">
           <h3>Email Address *</h3>
-          <input type="text" placeholder="your.email@example.com" />
+          <input type="text" id="email" placeholder="your.email@example.com" />
           <svg
             class="email-icon"
             width="24"
@@ -45,14 +45,22 @@
         </div>
 
         <h3>Subject*</h3>
-        <input type="text" placeholder="Brief summary of your complaint" />
+        <input
+          type="text"
+          id="title"
+          placeholder="Brief summary of your complaint"
+        />
         <h3>Description *</h3>
         <textarea
+          id="description"
           rows="4"
           placeholder="Provide a detailed description of your complaint"
         ></textarea>
       </div>
-      <button>Submit Complaint</button>
+      <button id="submitBtn">Submit Complaint</button>
     </div>
+
+
+    <script src="script.js"></script>
   </body>
 </html>

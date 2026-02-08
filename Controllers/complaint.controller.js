@@ -15,9 +15,12 @@ export function getComplaintbyId(req,res){
 export function newComplaints(req, res) {
   const newComplaint = {
     id: complaints.length + 1,
+    name:req.body.name,
+    email:req.body.email,
     title: req.body.title,
     description: req.body.description,
     status: "open",
+    submittedAt:new Date().toLocaleString()
   };
   complaints.push(newComplaint);
   res.json({ message: "Complaint Registered", complaint: newComplaint });
