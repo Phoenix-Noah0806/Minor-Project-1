@@ -3,24 +3,24 @@ let complaints = [];
 export function getComplaints(req, res) {
   res.json(complaints);
 }
-export function getComplaintbyId(req,res){
-  const id=Number(req.params.id);
-  const complaint=complaints.find((i)=>i.id===id);
-  if(!complaint){
+export function getComplaintbyId(req, res) {
+  const id = Number(req.params.id);
+  const complaint = complaints.find((i) => i.id === id);
+  if (!complaint) {
     return res.status(404).send("Complaint not Found!!!!");
   }
-  res.json(complaint)
+  res.json(complaint);
 }
 
 export function newComplaints(req, res) {
   const newComplaint = {
     id: Date.now(),
-    name:req.body.name,
-    email:req.body.email,
+    name: req.body.name,
+    email: req.body.email,
     title: req.body.title,
     description: req.body.description,
     status: "PENDING",
-    submittedAt:new Date().toLocaleString()
+    submittedAt: new Date().toLocaleString(),
   };
   complaints.push(newComplaint);
   res.json({ message: "Complaint Registered", complaint: newComplaint });
