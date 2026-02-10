@@ -5,7 +5,7 @@ const router=express.Router()
 
 router.get('/',getComplaints)
 router.post('/',newComplaints)
-router.put('/:id/resolve',authMiddleware,updateComplaint)
+router.put('/:id/',authMiddleware,updateComplaint)
 router.delete('/:id',authMiddleware,deleteComplaint)
 
 export default router

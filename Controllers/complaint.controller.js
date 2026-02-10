@@ -14,7 +14,7 @@ export function getComplaintbyId(req,res){
 
 export function newComplaints(req, res) {
   const newComplaint = {
-    id: complaints.length + 1,
+    id: Date.now(),
     name:req.body.name,
     email:req.body.email,
     title: req.body.title,
