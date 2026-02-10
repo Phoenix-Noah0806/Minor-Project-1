@@ -19,7 +19,7 @@ export function newComplaints(req, res) {
     email:req.body.email,
     title: req.body.title,
     description: req.body.description,
-    status: "open",
+    status: "PENDING",
     submittedAt:new Date().toLocaleString()
   };
   complaints.push(newComplaint);
@@ -32,7 +32,7 @@ export function updateComplaint(req, res) {
   if (index === -1) {
     return res.status(404).send("Complaint not Found!!!!");
   }
-  complaints[index].status = "resolved";
+  complaints[index].status = req.body.status;
   res.json(complaints);
 }
 

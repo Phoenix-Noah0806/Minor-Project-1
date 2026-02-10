@@ -10,35 +10,44 @@ buttons.forEach((btn) => {
     btn.style.color = "white";
   });
 });
+async function changeStatus(id, status) {
 
+  await fetch(`/complaints/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ status })
+  });
+
+  loadComplaints(); // reload cards + counters
+}
 async function loadComplaints() {
   const res = await fetch("/complaints");
   const complaints = await res.json();
 
   const container = document.getElementById("complaintsContainer");
   container.innerHTML = "";
-
   let total = complaints.length;
   let pending = 0;
   let resolved = 0;
   let rejected = 0;
 
   complaints.forEach((c) => {
-    if (c.status === "open") {
+    if (c.status === "PENDING") {
       pending++;
-    } else if (c.status === "resolved") {
+    } else if (c.status === "RESOLVED") {
       resolved++;
-    } else if (c.status === "rejected") {
+    } else if (c.status === "REJECTED") {
       rejected++;
     }
 
     const div = document.createElement("div");
     div.className = "details";
-
     div.innerHTML = `
-      <div class="top">
+        <div class="top">
         <h5>ID: ${c.id}</h5>
-        <button class="status">${c.status}</button>
+        <button class="status" id="status-${c.id}">${c.status}</button>
       </div>
 
       <div class="middle">
@@ -59,11 +68,25 @@ async function loadComplaints() {
         <p>${c.description}</p>
         <p>Submitted: ${c.submittedAt || "-"}</p>
       </div>
-    `;
+      <div class="status-btns">
+      <button id="pending" onclick="changeStatus(${c.id},'PENDING')" 
+          ${c.status === 'PENDING' ? 'disabled' : ''}>
+          Set Pending
+        </button>
 
+        <button id="resolve" onclick="changeStatus(${c.id},'RESOLVED')" 
+          ${c.status === 'RESOLVED' ? 'disabled' : ''}>
+          Set Resolved
+        </button>
+
+        <button id="reject" onclick="changeStatus(${c.id},'REJECTED')" 
+          ${c.status === 'REJECTED' ? 'disabled' : ''}>
+          Set Rejected
+        </button>
+        </div>
+`;
     container.appendChild(div);
   });
-
   document.querySelector("#card1 p").innerText = total;
   document.querySelector("#card2 p").innerText = pending;
   document.querySelector("#card3 p").innerText = resolved;

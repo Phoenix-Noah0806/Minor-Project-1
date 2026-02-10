@@ -154,7 +154,7 @@ body{
     flex-direction: column;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     width: 93vw;
-    height: 23vh;
+    height: 28vh;
     border-radius: 10px;
     font-size: 20px;
     padding-left: 25px;
@@ -179,6 +179,7 @@ body{
 .top button.status{
     height: 20px;
     width: 70px;
+    border: none;
     background-color: #ffb47e;
     border-radius: 6px;
     border: 1px solid gray;
@@ -198,4 +199,34 @@ body{
 .lowermost{
     font-size: 15px;
     color: gray;
+}
+.status-btns button{
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: red;
+  font-weight: 400;
+  font-size: 15px;
+  border: none;
+}
+.status-btns #pending{
+  background-color: rgb(245, 176, 47) ;
+  color: orangered;
+}
+.status-btns #resolve{
+  background-color: lightgreen ;
+  color: darkgreen;
+}
+.status-btns #reject{
+  background-color: #FFA07A;
+  color: red;
+}
+
+.status.pending { background: orange; }
+.status.resolved { background: green; }
+.status.rejected { background: red; }
+
+.status-btns button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
