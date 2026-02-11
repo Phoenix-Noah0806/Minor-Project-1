@@ -9,4 +9,4 @@ router.post('/',newComplaints)
 router.put('/:id/',authMiddleware,updateComplaint)
 router.delete('/:id',authMiddleware,deleteComplaint)
 
-export default router
+export default router 

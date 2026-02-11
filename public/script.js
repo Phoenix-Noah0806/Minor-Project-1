@@ -16,15 +16,17 @@ async function submitComplaint() {
   }
 
   
-  await fetch("/complaints", {
+  const response=await fetch("/complaints", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({ name, email, title, description })
   });
+    const data = await response.json();
+    const complaintId = data.complaint.id;
 
-  alert("Complaint Submitted Successfully!!!");
+  alert(`Complaint Submitted Successfully!!! \n\nYour Tracking ID is: ${complaintId} \n\nPlease keep it safe for future reference.`);
 
   document.getElementById("fullname").value = "";
   document.getElementById("email").value = "";
