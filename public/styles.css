@@ -5,26 +5,17 @@
 }
 
 body {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafc;
 }
 .nav {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: space-between;
-  background-color: whitesmoke;
-  border: none;
-  width: 100vw;
-  height: 60px;
   align-items: center;
-  padding: 0px 15px 0px 40px;
-  font-style: bold;
-  margin: 10px 0px 0px 25px;
+  background-color: whitesmoke;
+  height: 60px;
+  padding: 0 20px;
 }
 .btn .active {
   background-color: blue;
@@ -59,68 +50,59 @@ body {
   border: none;
   font-style: bold;
 }
+
 .form {
-  height: 800px;
-  width: 800px;
-  /* background-color: blue; */
-  margin-top: 30px;
+  max-width: 800px;
+  width: 95%;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
-.form .inputs1 {
-  display: flex;
-  flex-direction: column;
-  margin-top: 55px;
-  margin-left: 55px;
-  gap: 15px;
-}
+
+.form .inputs1,
 .form .inputs2 {
-  margin-top: 30px;
-  margin-left: 55px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-input {
-  background-color: whitesmoke;
-  border: 2px solid wheat;
-  width: 750px;
-  height: 40px;
-  border-radius: 8px;
-}
+
+input,
 textarea {
   background-color: whitesmoke;
-  border: 2px solid wheat;
-  width: 750px;
-  height: 180px;
+  border: 1px solid #ddd;
+  width: 100%;
   border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
 }
+
 .form button {
   background-color: blue;
   color: white;
   height: 50px;
   border-radius: 8px;
   font-size: 18px;
-  font-style: bold;
-  margin: 0px 15px 0px 0px;
-  border: 2px solid blue;
-  margin-left: 55px;
+  border: none;
+  cursor: pointer;
+}
+.form button:hover {
+  background-color: darkblue;
 }
 
 .input-wrapper {
   position: relative;
-  width: 300px;
+  width: 100%;
 }
 
 .email-icon {
   position: absolute;
-  top: 65%;
-  left: 240%;
-  transform: translateY(-50%);
+  right: 10px;
+  top: 30px;
   pointer-events: none;
 }
-.dash{
+
+.dash {
   margin-top: 35px;
   /* position: relative; */
   /* position: absolute; */
@@ -128,16 +110,16 @@ textarea {
   left: 45px;
 }
 
-.cards{
+.cards {
   display: flex;
   flex-direction: row;
   gap: 60px;
 }
 
-.card{
+.card {
   height: 110px;
   width: 350px;
-  
+
   margin-top: 30px;
   padding-left: 30px;
   border-radius: 10px;
@@ -148,18 +130,42 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-#card1{
+#card1 {
   border-left: 6px solid rgb(8, 102, 139);
 }
-#card2{
+#card2 {
   border-left: 6px solid rgb(245, 245, 44);
 }
-#card3{
+#card3 {
   border-left: 6px solid green;
 }
-#card4{
+#card4 {
   border-left: 6px solid red;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .btn {
+    display: flex;
+    gap: 10px;
+  }
+
+  .form {
+    margin: 20px auto;
+  }
+
+  .btn .active,
+  .btn .inactive {
+    width: 100px;
+    font-size: 14px;
+  }
 }

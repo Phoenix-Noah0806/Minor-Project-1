@@ -11,10 +11,9 @@ export function getComplaintbyId(req, res) {
   }
   res.json(complaint);
 }
-
 export function newComplaints(req, res) {
   const newComplaint = {
-    id: Date.now(),
+    id:  Date.now(),
     name: req.body.name,
     email: req.body.email,
     title: req.body.title,
